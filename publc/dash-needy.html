@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head><!doctype html>
+    <html lang="en">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Needy</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+      </head>
+      <script src="js file/imp-jqery-1.8.2.min.js"></script>
+      <script src="java script/dash-needy.js">
+       
+      </script>
+      <link rel="stylesheet" href="styleshhet/dash-needy.css">
+      
+      <body style="background-color:darkgrey ;">
+        <!-- ====================== Navbar top ========================)============================================= -->
+      <!-- As ca heading -->
+      <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid"><div>
+          <img src="uploads/logo med.png" style="background-color: white ;float:left;margin-right: 8px; " alt="" width="50px" height="50px">
+      <span class="navbar-brand mb-2 h1">
+        <h1 style="float: left;">Medibook</h1> </div>
+        <div style="color: white; margin-right: 30px;"><h1>Needy</h1></div>
+   
+        </div>
+        
+      
+      </nav>
+      <!-- ===================================================================================================== -->
+    
+         <!-- ====================== Navbar bottom ===================================================================== -->
+  <nav class="navbar fixed-bottom bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand mb-2 h1" href="#"></a>
+    </div>
+  </nav>
+  <!-- ===================================================================================================== -->
+        <!--================================ adding cards ---1 ===========================================================================-->
+        <div class="container" style="margin-top:50px ;">
+        <div class="card-group">
+          <div class="card" id="div1" >
+            <img src="uploads/profile.jfif" class="user" alt="" >
+            <div class="card-body" ><br><br><br>
+              <h3 class="card-title" style="margin-left:-10px"><center><button type="button" class="button1" id="profile" name="profile">Profile</button></center></h3>
+              
+            </div>
+          </div>
+          <div class="card" style="margin-left: 20px;">
+            <img src="uploads/need med.jpg" class="user"  alt="...">
+            <div class="card-body"><br><br><br>
+            <h3 class="card-title"><center><button type="button" class="button3" id="need">Need Medicines</button></center></h3>
+    
+            </div>
+          </div>
+          <div class="card" style="margin-left:20px ;margin-right: 20px;">
+            <img src="uploads/settings.jpg" class="user" alt="...">
+            <div class="card-body"><br><br><br>
+    <h3 class="card-title" style="margin-left:-10px">
+      <center>
+        <button type="button" id="setbtn"  class="button1" data-bs-toggle="modal" data-bs-target="#exampleModal">Settings
+    
+        </button>
+      </center>
+    </h3>
+    
+             
+            </div>
+          </div>
+          <div class="card"  >
+            <img src="uploads/logout.webp" class="user"  alt="...">
+            <div class="card-body" style="margin-left:-10px" ><br><br><br>
+              <h3 class="card-title"><center><button type="button" id="logout" style="width: 250px;" class="button3">Logout</button></center></h3>
+    
+              
+            </div>
+          </div>
+        </div>
+      </div>
+          <!-- ==================end========================================================================= -->
+        </div>
+      <!--========================setting modal================================== -->
+     <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header" style="background-color:aliceblue ;">
+            <h5 class="modal-title" id="exampleModalLabel">Settings</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" style="background-color: black;">
+            <div class="modal-body">
+              <div class="col-md-8">
+            
+                <input type="email" required class="form-control" id="txteml" placeholder="Email address">
+              </div><br>
+              <div class="col-md-8">
+                       
+                <input type="password" required class="form-control" id="opwd" placeholder="Old Password">
+              </div><br>
+              <div class="col-md-8">
+                       
+                <input type="password" required class="form-control" id="npwd" placeholder="New Password">
+              </div><br>
+      
+            </div>
+          </div>
+          <div class="modal-footer" style="background-color:white ;">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" onclick="dofill();" class="btn btn-primary" id="savepwd">Update</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- =========================================================================================== -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+      </body>
+    </html>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>

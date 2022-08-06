@@ -1,0 +1,56 @@
+    /* =========================== SCROLL BAR================*/
+/* width */
+::-webkit-scrollbar {
+    width: 20px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background:white; 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: black; 
+  }
+  
+  /*==========================================================*/
+  .button3{
+    background-color: #f44336;
+    color: white;
+  }
+  .button3:hover {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #f44336;
+  }
+  .button1:hover {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+  }
+  
+  
+  .button1 {
+    background-color: #4CAF50;
+    color: white;
+  }
+  .button5{
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+  }
+  
+  
+  .button5:hover  {
+    background-color: #4CAF50;
+    color: white;
+  }
+  

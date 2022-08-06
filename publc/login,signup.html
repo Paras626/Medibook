@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login-signup</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <script src="js file/imp-jqery-1.8.2.min.js"> </script>
+</head>
+
+<link rel="stylesheet" href="styleshhet/login-style.css">
+<script src="java script/login.javascript.js" ></script>
+<script>
+  setInterval(showTime, 1000);
+  // in built function //1000 dee smj nhi awri....wht is its work?
+   function showTime() {
+       var time = new Date(); //in built funvtion
+       var hour = time.getHours(); // in built function
+       var min = time.getMinutes();// in built function
+       var sec = time.getSeconds();// in built function
+       var session = "AM";
+      
+       var day=time.getDate();
+       var month=time.getMonth()+1;
+       var year=time.getFullYear();
+       var dayu=time.getDay();
+
+
+
+       //--------------------
+       if(dayu==0)
+       dayu="SUNDAY";
+       if(dayu==1)
+       dayu="MONDAY";
+       if(dayu==2)
+       dayu="TUESDAY";
+       if(dayu==3)
+       dayu="WEDNESDAY";
+       if(dayu==4)
+       dayu="THURSDAY";
+       if(dayu==5)
+       dayu="FRIDAY";
+       if(dayu==6)
+       dayu="SATURDAY";
+       
+
+       if (hour > 12)  // if we want jdo hee time 12 toh cross kre 13 naa awe 1pm ajee
+       {
+           hour -= 12; // hour=12-hour;
+           session = "PM";
+       }
+       /// if we want 00:00 naa avee odi jgh 12:00 AM awe
+       if (hour == 0)
+        {
+           hr = 12;
+           session = "AM";
+       }
+//---------------- if we want hours, minutes and seconds .........10 toh ght honn and we want 2 digits//
+       if(hour<10)
+        hour="0" + hour;
+        else
+        hour=hour;
+
+        if(min<10)
+        min="0" + min;
+        else
+        min=min;
+
+        if(sec<10)
+        sec="0" + sec;
+        else
+        sec= sec;
+        //-----------------------------------
+        if(day<10)
+        day="0" + day;
+        else
+        day=day;
+
+        if(month<10)
+        month="0" + month;
+        else
+        month=month;
+
+        if(year<10)
+        year="0" + year;
+        else if(year <100)
+        year="00" + year;
+        else if(year <1000)
+        year="000" + year;
+        else
+        year=year;
+
+
+      // hour = hour < 10 ? "0" + hour : hour;//? than : otherwise
+      // min = min < 10 ? "0" + min : min;
+       //sec = sec < 10 ? "0" + sec : sec;
+
+       var currentTime = hour + ":" + min + ":" + sec +" "+ session;
+       var currentdate = day + "/" + month + "/" + year;
+       var dayuu= dayu;
+
+       document.getElementById("clock").innerHTML = currentTime;
+       document.getElementById("date").innerHTML = currentdate;
+       document.getElementById("day").innerHTML = dayu;
+       // if we want to change the given tym it can only be changed... by innerHTML
+   }
+   showTime();
+   /* apee clock hoyi javee ...we dont want to interfere*/
+</script>
+
+<body>
+  <!-- ====================== Navbar top ===================================================================== -->
+  <!-- As ca heading -->
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid"><div>
+      <img src="uploads/logo med.png" style="background-color: white ;float:left; margin-right: 8px;" alt="" width="50px" height="50px">
+      <span class="navbar-brand mb-2 h1" style="margin-left: 0px;">
+        <h1 style="float:left">Medibook</h1>
+      </div>
+      </span>
+      <span style="font-size:20px ">
+       
+      </span><div>
+      <button type="button" style="float: right; margin-left:15px ;padding: 5px 25px 5px 25px;"class="button1" data-bs-toggle="modal"
+        data-bs-target="#exampleModal1">SignUp</button>
+
+      <button type="button" id="login" style="float: right;padding: 5px 25px 5px 25px;" class="button3"
+        data-bs-toggle="modal" data-bs-target="#exampleModal">Login</button>
+
+      </div>
+    </div>
+  </nav>
+  <!-- ===================================================================================================== -->
+  <br>
+
+  <!-- <button type="button" id="login" style="float: right;margin-right: 20px; width: 200px;" class="btn btn-primary"
+    data-bs-toggle="modal" data-bs-target="#exampleModal">Login</button>
+  <button type="button" style="float: right;margin-right: 20px; width: 200px;" class="btn btn-primary"
+    data-bs-toggle="modal" data-bs-target="#exampleModal1">Create new account</button> -->
+
+  <!-- ====================== Navbar bottom ===================================================================== -->
+  <nav class="navbar fixed-bottom bg-dark">
+    <div class="container-fluid">
+      
+      
+      <div class="clockouter" >
+         
+        <div class="col-md-12" >
+          <span style="color: white; margin-left: 500px;" ><img src="uploads/copyright-symbol-icon-vector-illustration.webp" class="copyright"> Copyright all rights reserved</span>
+          <span id="clock" style="color: white; float: right;"> 8:10:45 </span>
+        </div>
+   
+        <div class="col-md-3"  style=" font-size: 20px;color: white ;margin-left:1100px ;" id="day"><div id="date"></div>MONDAY</div>
+      </div>
+    </div>
+ 
+   
+
+     
+  
+  </nav>
+  <!-- ===================================================================================================== -->
+  <!--================================== login box ================================================= -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: cadetblue;">
+          <h1 class="modal-title" id="exampleModalLabel" style="color: black;">Login</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <center>
+
+            <div class="row">
+              <div class="col">
+                <div style="margin-right:240px"><span>
+                    <h1 style="color: black;">Medibook</h1>
+                  </span></div>
+                <h4>Medibook helps you to avail and share medicines with the people those are in need.</h4>
+                </div>
+              <div class="col">
+
+                <div class="col-md-8"><table>
+                  <tr><td style="width: 450px;">
+
+                  <input type="email" required class="form-control" id="txtemail1" placeholder="Email address">
+                 
+                <span style="color: black;"  id="respserver1"></span><br>
+                <span style="color: black;" id="erruid1"></span></td></tr></table>
+              </div>
+                <div class="col-md-8">
+                  <table>
+                    <tr><td style="width: 450px;">
+
+                  <input type="password" required class="form-control" id="txtpwd1" placeholder="Password"></td><td>
+                  <i class="fa fa-eye-slash"  aria-hidden="true"></i>
+                  <!-- <i class="fa-solid fa-door-closed" aria-hidden="true"></i> -->
+                </td></tr></table><span style="color: black;" id="pwddd1"></span></div><br>
+                <div class="col-md-10">
+                  <button type="button" onclick="dochk();" style="padding:10px 90px 10px 90px ;" class="button3"
+                    id="logbtn">
+                    <h3>Login
+                  </button></h3>
+                 
+                </div><br>
+                <a href="#">forgotten password?</a>
+
+              </div>
+            </div>
+          </center>
+
+
+        </div>
+
+        <div class="modal-footer" style="background-color: cadetblue; height: 60px;">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ============================================================================= -->
+  <!-- ============================= signup box ================================================= -->
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+    <form method="post">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header" style="background-color:rosybrown">
+            <h1 class="modal-title" style="color: black;">Sign Up</h1>
+
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-8"> <table>
+                <tr><td style="width: 450px;">
+
+                <span><input type="email" required class="form-control" id="txtemail" name="txtemail"
+                  placeholder="Email address" ></span></td></tr></table>
+              </div>
+              <span style="color: black;" id="respserver"></span>
+              <span style="color: black;" id="erruid"></span>
+              <!-- <div class="col-md-2" id="icon"><img src="uploads/tick-cliparts-20.png" class="tick" alt="..."></div> -->
+            </div><br>
+
+
+            <div class="col-md-8">
+              <table>
+                <tr><td style="width: 500px;">
+                  
+             <span> <input type="password" required class="form-control" id="txtpwd" name="txtpwd"
+                placeholder="Enter Password"> </span></td>
+                <td>
+                <i class="fa fa-eye-slash"  aria-hidden="true"></i>
+              </td></tr>
+            </table>
+               
+                  
+                
+                <span style="color: black;" id="pwddd"></span></div>
+
+              <!-- <i class="fa fa-eye-slash"  aria-hidden="true" ></i>  -->
+         
+            <br>
+            
+            <div class="col-md-8">
+              <table>
+                <tr><td style="width: 450px;">
+              <span><select class="form-select" required aria-label="Default select example" name="txtuser" id="txtuser">
+                <option selected>Select menu</option>
+                <option value="donor">Donor</option>
+                <option value="needy">Needy</option>
+              </select></span></td></tr></table>
+            </div>
+
+          </div>
+          <div class="modal-footer" style="background-color:rosybrown;">
+
+            <button type="button" onclick="dofill();" style="padding: 5px 5px 5px 5px  ;" class="button1"
+              id="signbtn" name="signbtn">Sign Up</button>
+          </div>
+        </div>
+      </div>
+  </div>
+  <!-- ===================================================================================================== -->
+  <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel" style="margin-top: -30px;">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="10000">
+        <img src="uploads/donate-charity-for-medical-and-health-background-vector.jpg " height="600" width="400" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="2000">
+        <img src="uploads/med charity.jpg" height="600" width="400" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="uploads/med charity1.jpg" height="600" width="400" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <div style="margin-bottom: 35px;">
+    <table width="100%" height="50px">
+      <th style="background-color: black;">
+        <h3 style="color: white;">
+          <center>OUR SERVICES</center>
+        </h3>
+      </th>
+    </table>
+    <div class="row">
+      <div class="col-md-3" style="margin-left:70px ;">
+        <div class="card" style="width: 18rem;border: 0px ;">
+          <img src="uploads/charity-20.png" class="user" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">
+              <center><u> Donate Medicine</u></center>
+            </h5>
+            <p class="card-text">Tiny Drops of water make an Ocean.We are not here to collect money, we ask you to
+              donate your surplus medicines. </p>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3" style="margin-left:70px ;">
+        <div class="card" style="width: 18rem;border: 0px">
+          <img src="uploads/med.webp" class="user" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">
+              <center><u>Get Medicine</u></center>
+            </h5>
+            <p class="card-text"><p>The Preservation of HEALTH is 
+                                      easier than the CURE of the disease.
+                                      The persons in need can get money here
+                                       and can remian healthy.</p></p>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3" style="margin-left:70px ;">
+        <div class="card" style="width: 18rem;border: 0px ">
+          <img src="uploads/consult.jpg" class="user" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">
+              <center><u>Consultation</u></center>
+            </h5>
+            <p class="card-text"><p>Consulting someone is necessary 
+                                    before taking medicine. 
+                                    Donor & Needy person can communicate
+                                    with each other.</p></p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <table width="100%" height="50px">
+      <th style="background-color: black;">
+        <h3 style="color: white;">
+          <center>REACH US</center>
+        </h3>
+      </th>
+    </table>
+    <iframe width="1260"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3447.880571351334!2d74.95013941432393!3d30.211955917596537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391732a4f07278a9%3A0x4a0d6293513f98ce!2sBanglore%20Computer%20Education!5e0!3m2!1sen!2sin!4v1658430680600!5m2!1sen!2sin"
+      width="2000" height="500" style="border:0;" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <table width="100%" height="50px">
+      <th style="background-color: black;">
+        <h3 style="color: white;">
+          <center>MEET THE DEVELOPERS</center>
+        </h3>
+      </th>
+    </table>
+    <table width="100%" height="50px">
+      <tr>
+        <th style=" width: 600px;">
+          <center>
+            <h4><b>Developed by</h4></b>
+          </center>
+        </th>
+        <th>
+          <center>
+            <h4><b>Under the Guidance of</h4></b>
+          </center>
+        </th>
+      </tr>
+    </table>
+
+    <div class="row">
+      <div class="col-md-2">
+        <img src="uploads/paras pic (2).jpg" width="200px" height="200px">
+      </div>
+      <div class="col-md-3" style="width: 398px;">
+        <h5>Paras Goyal</h5>
+        <li>Email id-
+          626Paras@gmail.com</li>
+        <li>Mobile number- 9041108726</li>
+
+        <p>We are working to bridge the gap between the billions of dollars of unused and unexpired medicines thrown
+          away each year and the patients who need them.</p>
+
+        <b></b>
+      </div>
+      <div class="col-md-2" style="margin-bottom:30px ;">
+        <img src="pics/sir.jfif" width="200px" style="margin-left: -12px;" height="200px">
+      </div>
+      <div class="col-md-3" style="width: 446px;">
+        <h5>Rajesh Bansal</h5>
+        Founder & Author of Real Java
+        <li>Email id-
+          bcebti@gmail.com</li>
+        <li>Mobile number- 9872246056</li>
+
+
+
+      </div>
+        </div>
+    
+
+
+
+
+
+
+  </div>
+
+
+
+
+
+
+  </form >
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Medicines</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  </head>
+  <script src="js file/imp-jqery-1.8.2.min.js"></script>
+  <link rel="stylesheet" href="styleshhet/avail-medicine.css">
+  
+  <script src="java script/avail-medicine.js">
+   
+  </script>
+  <body>
+    
+   <!-- ====================== Navbar top ========================)============================================= -->
+  <!-- As ca heading -->
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid"><div>
+        <img src="uploads/logo med.png" style="background-color: white ;float:left ;margin-right: 8px; " alt="" width="50px" height="50px">
+        <span class="navbar-brand mb-2 h1">
+          <h1 style="float: left;">Medibook</h1> </div>
+          <div style="color: white; margin-right: 30px;"><h1>Post Medicine to Donate</h1></div>
+    
+    </div>
+  </nav>
+  <!-- ===================================================================================================== -->
+
+       <!-- ====================== Navbar bottom ===================================================================== -->
+  <nav class="navbar fixed-bottom bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand mb-2 h1" href="#"></a>
+    </div>
+  </nav>
+  <!-- ===================================================================================================== -->
+<div class="container" style="margin-bottom:50px ;"><br>
+    <form method="post" enctype="multipart/form-data">
+        <div class="row g-3" ><!-- method="post" enctype="multipart/form-data" -->
+        
+        <div class="input-group  col-6" >
+            <span class="input-group-text" id="basic-addon1">@</span>
+            <input type="text" class="form-control" name="txtemail" id="txtemail" required placeholder="Email/User Id" aria-label="Username" aria-describedby="basic-addon1">
+          </div>
+          <div class="col-4">
+            <label for="inputAddress" class="form-label"><h5>Medicine Name</h5></label>
+            <input type="text" class="form-control" required name="txtname" id="txtname">
+          </div>
+          <div class="col-1">
+
+          </div>
+          <div class="col-3">
+            <label for="inputAddress"   class="form-label"><h5>Packing</h5></label>
+            <select class="form-select"  aria-label="Default select example"  name="pack" id="pack">
+                <option  selected>Type of Packing</option>
+                <option value="Tablets">Tablets</option>
+                <option value="Serum">Serum</option>
+                <option value="Powder">Powder</option>
+                <option value="Other">Other</option>
+              </select>
+          </div>
+          <div class="col-1">
+
+        </div>
+        <div class="col-3">
+          <label for="inputAddress"   class="form-label"><h5>Quantity</h5></label>
+          <input type="text" required class="form-control" id="qty" name="qty" placeholder="With unit">
+        </div>
+       
+        <div class="col-4">
+            <label for="inputAddress" class="form-label"><h5>Expiry Date</h5></label>
+            <input type="date" required class="form-control" id="expdate" name="expdate" >
+          </div>
+          <div class="col-1">
+
+        </div>
+        <div class="col-3">
+          <label for="inputAddress" class="form-label"><h5>Company</h5></label>
+          <input type="text" required class="form-control" name="comp" id="comp" placeholder="Company">
+        </div>
+        <div class="col-4">
+
+        </div>
+        <div class="col-4">
+            <label for="inputAddress" class="form-label"><h5>Upload pic</h5></label>
+            <input type="file" required class="form-control" name="med" id="med"  onchange="loadmedicinepic(this);">
+          </div>
+          <div class="col-2">
+
+          </div>
+          
+            <div class="col-md-6" >
+                <img src="" id="medpic" name="medpic" width="100px" height="100px"></div>
+
+          
+          
+         
+          <div class="col-10">
+          <div class="input-group">
+            <span class="input-group-text">Description</span>
+            <textarea class="form-control" required id="desc" name="desc" aria-label="With textarea"></textarea>
+          </div></div><div class="col-5"></div><div class="col-4">
+          <button type="submit" name="list" id="list" class="button5"  formaction="/list-medicine" style="padding: 10px 40px 10px 40px;" class="btn btn-primary">List the Medicine</button>
+        </div>
+     </form>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>admin-block-user</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+
+<script src="js file/imp-jqery-1.8.2.min.js"></script>
+<script src="angular/angular.min.js"></script>
+<script src="angular/admin-block-user.js">
+
+</script>
+
+
+
+<body ng-app="myModule" ng-controller="myController">
+
+     <!-- ====================== Navbar top ========================)============================================= -->
+  <!-- As ca heading -->
+  <nav class="navbar navbar-dark bg-primary">
+    <div class="container-fluid"><div>
+        <img src="uploads/logo med.png" style="background-color: white ;float:left ;margin-right: 8px; " alt="" width="50px" height="50px">
+        <span class="navbar-brand mb-2 h1">
+          <h1 style="float: left;">Medibook</h1> </div>
+          <div style="color: white; margin-right: 30px;"><h1>Block Panel</h1></div>
+    
+    </div>
+  </nav>
+    <!-- ==================================================================================== -->
+    <!-- ====================== Navbar bottom ===================================================================== -->
+  <nav class="navbar fixed-bottom bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand mb-2 h1" href="#"></a>
+    </div>
+  </nav>
+  <!-- ===================================================================================================== -->
+    <br>
+    <center><button type="button" class="btn btn-primary" ng-click="fetchalluser();">
+            <h1>Fetch All Users</h1>
+        </button> </center>
+    <!-- ================== Table ================================================ -->
+    <center><br>
+        <table width="1000" height="500" border="3" style="margin-bottom: 100px;">
+            <tr bgcolor="dodgerblue">
+                <th>
+                    <h3>Sr No.</h3>
+                </th>
+                <th>
+                    <h3>Email</h3>
+                </th>
+                <th>
+                    <h3>User Type</h3>
+                </th>
+                <th>
+                    <h3>Status</h3>
+                </th>
+
+                <th>
+                    <h3>Block / Resume</h3>
+                </th>
+            </tr>
+            <tr ng-repeat="obj in jsonAry">
+                <td>
+                    <h3>{{$index+1}}</h3>
+                </td>
+                <td>
+                    <h3>{{obj.email}}</h3>
+                </td>
+
+                <td>
+                    <h3>{{obj.utype}}</h3>
+                </td>
+
+                <td>
+                    <h3>{{obj.status}}</h3>
+                </td>
+                <td>
+                    <h3>
+                        <button type="button" ng-click="block(obj.email,obj.status);" 
+                            style="padding-left: 10px; border: 50px; background: black;float: left;">
+                            <img src="pics/Loudly_Crying_Face_Emoji_grande.png" alt="" height="40"
+                                width="50">
+                        </button>
+                        <button type="button" ng-click="resume(obj.email,obj.status);"
+                            style="padding-left: 50px; border: none; background: none;">
+                            <img src="pics/heart.png" height="40" alt="" width="50">
+                        </button>
+                    </h3>
+                </td>
+
+            </tr>
+        </table>
+    </center>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

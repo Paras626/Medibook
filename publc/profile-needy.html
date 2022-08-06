@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Profile-Needy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<link rel="stylesheet" href="styleshhet/profile-needy.css">
+<script src="js file/imp-jqery-1.8.2.min.js"></script>
+<script src="java script/profile-needy.js">
+   
+
+
+</script>
+<!-- ============================================================================================================= -->
+
+
+<body >
+   <!-- ====================== Navbar top ========================)============================================= -->
+  <!-- As ca heading -->
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid"><div>
+        <img src="uploads/logo med.png" style="background-color: white ;float:left ;margin-right: 8px; " alt="" width="50px" height="50px">
+        <span class="navbar-brand mb-2 h1">
+          <h1 style="float: left;">Medibook</h1> </div>
+          <div style="color: white; margin-right: 30px;"><h1>Needy Profile</h1></div>
+    
+    </div>
+  </nav>
+  <!-- ===================================================================================================== -->
+  <!-- ====================== Navbar bottom ===================================================================== -->
+
+  <nav class="navbar fixed-bottom bg-dark" >
+  
+    <div class="container-fluid" >
+      <a class="navbar-brand mb-2 h1"></a>
+    </div>
+  </nav>
+  <!-- ===================================================================================================== -->
+    <div class="container" style="margin-bottom:50px ;"  >
+        <br>
+        <form class="row g-3" method="post" enctype="multipart/form-data">
+            <!--  method="post" enctype="multipart/form-data" -->
+            <input type="hidden" id="hdn" name="hdn">
+            <input type="hidden" id="hdn1" name="hdn1">
+            <div class="col-md-6">
+
+                <input type="email" required class="form-control" name="txtemail" id="txtemail" placeholder="Email Id">
+            </div><div class="col-md-1"></div>
+            <div class="col-md-5">
+                <button type="button" class="button1" id="srchbtn"
+                    style="padding:10px 50px 10px 50px;">Fetch</button>
+            </div><br>
+            <div class="col-md-6">
+
+                <input type="text" required class="form-control" name="txtname" id="txtname" placeholder="Name">
+            </div><div class="col-md-1"></div>
+            <div class="col-md-4">
+                <input type="text" required class="form-control" name="mobile" id="mobile" placeholder="Mobile Number">
+            </div><br><div class="col-md-1"></div>
+            <div class="col-6">
+
+                <input type="text" required class="form-control" name="address" id="address" placeholder="Address">
+            </div><div class="col-md-1"></div>
+            <!-- edible dropdown html========================================================================== -->
+            <div class="col-md-2">
+                <input type="text" required name="state" list="productName" class="form-control" id="state" placeholder="State">
+                <datalist id="productName">
+                    <option value="Punjab">Punjab</option>
+                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                    <option value="Assam">Assam</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="Chhattisgarh">Chhattisgarh</option>
+                    <option value="Jharkhand">Jharkhand</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Mizoram">Mizoram</option>
+                    <option value="Nagaland">Nagaland</option>
+                    <option value="Odisha">Odisha</option>
+                    <option value="Sikkim">Sikkim</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Telangana">Telangana</option>
+                    <option value="Tripura">Tripura</option>
+                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                    <option value="West Bengal">West Bengal</option>
+                    <option value="Uttarakhand">Uttarakhand</option>
+                    <option value="Manipur">Manipur</option>
+                    <option value="Meghlaya">Meghlaya</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                    <option value="Haryana">Haryana</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                </datalist>
+            </div>
+            <!-- edible dropdown html========================================================================== -->
+            <div class="col-md-2">
+                <select name="city" required id="city" placeholder="City" class="form-control"></select>
+            </div><div class="col-md-1"></div><br>
+            <!-- ====================================================================================== -->
+
+            <div class="col-6">
+                <select class="form-control" id="proof" name="proof" disabled
+                    aria-label=".form-select-lg example">
+                    <option selected>Select ID Proof</option>
+                    <option value="AADHAR CARD">AADHAR CARD</option>
+                    <option value="DRIVING LICENSE">DRIVING LICENSE</option>
+                    <option value="VOTER CARD">VOTER CARD</option>
+                </select>
+            </div><div class="col-md-1"></div>
+            <div class="col-md-4 ">
+
+                <input type="text" required class="form-control" name="time" id="time" placeholder="Contact Time">
+            </div><div class="col-md-1"></div>
+            <!-- =====================================pics=========================================== -->
+
+
+
+
+
+
+            <div class="col-md-4">
+               
+
+                <input type="file"  class="form-control" name="proofpic" id="proofpic" onchange="loadproof(this);">
+            </div>
+            <div class="col-md-3"></div>
+            <div class="col-md-4">
+                
+
+                <input type="file" class="form-control" name="profilepic"   id="profilepic" onchange="loadprofile(this);">
+            </div><div class="col-md-1"></div>
+
+            <div class="col-md-6">
+                <div class="col-md-6" style="margin-left: 150px;">
+                    <img src="" alt="" id="pr" name="pr" width="100px" height="100px"><span style="font-size: 20px;">Proof Pic</span>
+                </div>
+                
+            </div>
+            <div class="col-md-6">
+                <div class="col-md-6" style="margin-left: 150px;">
+                    <img src="" id="profile" alt="" name="profile" width="100px" height="100px"><span style="font-size: 20px;">Profile Pic</span>
+
+                    <!-- ========================================================================================= -->
+
+                </div>
+            </div><div class="col-md-3"></div>
+            <div class="col-3" >
+                <button type="submit" formaction="/profile-needy-save" id="save" style="padding: 10px 30px 10px 30px;"
+                    class="button3">Save</button></div><div class="col-md-2"></div><div class="col-md-3">
+                <button type="submit" formaction="/profile-needy-update"
+                    style="padding: 10px 30px 10px 30px;" class="button5">Update</button></div>
+            
+
+        </form>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
