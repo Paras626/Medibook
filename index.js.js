@@ -24,10 +24,10 @@ app.listen(process.env.PORT || 5000);
 app.use(expresskuch.static("publc"));
 
 var dbconfiguration = {
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "2022 june",
+    host: "ec2-52-212-228-71.eu-west-1.compute.amazonaws.com",
+    user: "vykjjpmwqdjppd",
+    password: "d177b5b2c705cd855da6a4f9b611627e8695f3392bfcbfb42aa2abc638465a9a",
+    database: "d409osj8ia1rj3",
 
 }
 var refdb = mysql.createConnection(dbconfiguration);
