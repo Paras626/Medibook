@@ -97,6 +97,7 @@ $(document).ready(function () {
             if (response.length != 0) {
                 $("#save").fadeOut();
                 alert(JSON.stringify(response));
+                $("#city").fadeOut();
             }
             else {
                 $("#save").fadeIn();
@@ -117,6 +118,7 @@ $(document).ready(function () {
             $("#time").val(response[0].timmings);
             $("#state").val(response[0].state);
             $("#city").val(response[0].city);
+            $("#cityy").val(response[0].city);
 
 
 

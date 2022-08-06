@@ -15,19 +15,17 @@ var fileuploader = require("express-fileupload");  // for pic dowloading
 
 
 //         port     behaviour
-// app.listen(8726, function () {
-//     console.log("server started");
-// })
-
-app.listen(process.env.PORT || 5000);
+app.listen(8726, function () {
+    console.log("server started");
+})
 
 app.use(expresskuch.static("publc"));
 
 var dbconfiguration = {
-    host: "ec2-52-212-228-71.eu-west-1.compute.amazonaws.com",
-    user: "vykjjpmwqdjppd",
-    password: "d177b5b2c705cd855da6a4f9b611627e8695f3392bfcbfb42aa2abc638465a9a",
-    database: "d409osj8ia1rj3",
+    host: "localhost",
+    user: "root",
+    password: "",
+    database: "2022 june",
 
 }
 var refdb = mysql.createConnection(dbconfiguration);
@@ -200,6 +198,11 @@ app.post("/profile-update", function (req, resp) {
             fname1 = req.body.hdn1;
             fname = req.body.hdn;
         }
+        if(req.body.city!= null)
+        {}
+        else{
+        req.body.city=req.body.cityy;
+    }
 
         // pic wala kaam end=====================
         //console.log(req.body);
@@ -410,6 +413,11 @@ app.post("/profile-needy-update", function (req, resp) {
             fname1 = req.body.hdn1;
             fname = req.body.hdn;
         }
+        if(req.body.city!= null)
+        {}
+        else{
+        req.body.city=req.body.cityy;
+    }
 
         // pic wala kaam end=====================
         //console.log(req.body);

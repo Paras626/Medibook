@@ -111,6 +111,7 @@ $(document).ready(function () {
             if (response.length != 0) {
                 $("#save").fadeOut();
                 alert(JSON.stringify(response));
+                $("#city").fadeOut();
             }
             else {
                 $("#save").fadeIn();
@@ -139,7 +140,7 @@ $(document).ready(function () {
             $("#hdn").val(response[0].proofpic);
             $("#hdn1").val(response[0].profilepic);
 
-
+            $("#cityy").val(response[0].city);
 
         })
     })

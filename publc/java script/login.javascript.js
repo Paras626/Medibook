@@ -47,7 +47,7 @@ $(document).ready(function () {
 
   //  $(".fa").mousedown(function(){ /*it means fa class dey vich*/
   $(".fa").mouseenter(function(){ 
-  $(this).removeClass("fa eye-slash").addClass("fa eye");
+  $(this).removeClass("fa-eye-slash").addClass("fa-eye");
   /* remove krde slash jdo uss teh mouse javee*/
   $("#txtpwd").attr("type", "text"); /*it means password dey vich type apa nu text hee dekhee*/
   /*attr means attire*/
@@ -55,13 +55,13 @@ $(document).ready(function () {
 
 $(".fa").mouseleave(function () {
 
-  $(this).removeClass("fa eye").addClass("fa eye-slash");
+  $(this).removeClass("fa-eye").addClass("fa-eye-slash");
   $("#txtpwd").attr("type", "password");
   /*it means type password dekhe not text*/
 });
 
 $(".fa").mouseenter(function(){ 
-  $(this).removeClass("fa eye-slash").addClass("fa eye");
+  $(this).removeClass("fa-eye-slash").addClass("fa-eye");
   /* remove krde slash jdo uss teh mouse javee*/
   $("#txtpwd1").attr("type", "text"); /*it means password dey vich type apa nu text hee dekhee*/
   /*attr means attire*/
@@ -69,7 +69,7 @@ $(".fa").mouseenter(function(){
 
 $(".fa").mouseleave(function () {
 
-  $(this).removeClass("fa eye").addClass("fa eye-slash");
+  $(this).removeClass("fa-eye").addClass("fa-eye-slash");
   $("#txtpwd1").attr("type", "password");
   /*it means type password dekhe not text*/
 });
