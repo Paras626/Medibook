@@ -15,9 +15,7 @@ var fileuploader = require("express-fileupload");  // for pic dowloading
 
 
 //         port     behaviour
-app.listen(8726, function () {
-    console.log("server started");
-})
+app.listen(process.env.PORT || 5000);
 
 app.use(expresskuch.static("publc"));
 
